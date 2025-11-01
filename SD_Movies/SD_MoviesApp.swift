@@ -9,5 +9,6 @@ struct SD_MoviesApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Movie.self])
     }
 }
