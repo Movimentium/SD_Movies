@@ -17,10 +17,11 @@ struct AddMovieScreen: View {
             TextField("Title", text: $title)
             TextField("Year", value: $year, format: .number)
         }
+        .navigationTitle("Add Movie")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    // dismiss
+                    dismiss()
                 } label: {
                     Image(systemName: "xmark")
                 }
@@ -47,11 +48,13 @@ struct AddMovieScreen: View {
         let movie = Movie(title: title, year: year)
         do {
             try modelCtx.save()
+            modelCtx.insert(movie)
             print(Self.self, #function, "OK")
             dump(movie)
         } catch {
             print(error.localizedDescription);  print(error)
         }
+        dismiss()
     }
     
 }
@@ -59,7 +62,6 @@ struct AddMovieScreen: View {
 #Preview {
     NavigationStack {
         AddMovieScreen()
-            .navigationTitle("Add Movie")
     }
     .modelContainer(for: [Movie.self])
 }

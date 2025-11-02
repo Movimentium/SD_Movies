@@ -7,7 +7,10 @@ import SwiftUI
 struct SD_MoviesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MovieListScreen()
+                    .navigationTitle("Movies")
+            }
         }
         .modelContainer(for: [Movie.self])
     }

@@ -15,6 +15,7 @@
 		0C981C832EB6C1A900F76731 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C981C822EB6C1A900F76731 /* README.md */; };
 		0C981C852EB6CDF700F76731 /* AddMovieScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */; };
 		0C981C892EB6CEDF00F76731 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C981C882EB6CEDF00F76731 /* String_Extension.swift */; };
+		0C981C8B2EB6D8CA00F76731 /* MovieListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C981C8A2EB6D8CA00F76731 /* MovieListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0C981C822EB6C1A900F76731 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieScreen.swift; sourceTree = "<group>"; };
 		0C981C882EB6CEDF00F76731 /* String_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
+		0C981C8A2EB6D8CA00F76731 /* MovieListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		0C981C862EB6CE0800F76731 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0C981C8A2EB6D8CA00F76731 /* MovieListScreen.swift */,
 				0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */,
 			);
 			path = Screens;
@@ -176,6 +179,7 @@
 			files = (
 				0C981C852EB6CDF700F76731 /* AddMovieScreen.swift in Sources */,
 				0C01A4732EB6BE16005D7AA4 /* ContentView.swift in Sources */,
+				0C981C8B2EB6D8CA00F76731 /* MovieListScreen.swift in Sources */,
 				0C01A4712EB6BE16005D7AA4 /* SD_MoviesApp.swift in Sources */,
 				0C981C812EB6C13200F76731 /* Movie.swift in Sources */,
 				0C981C892EB6CEDF00F76731 /* String_Extension.swift in Sources */,
