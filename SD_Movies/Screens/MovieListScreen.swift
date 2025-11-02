@@ -11,21 +11,19 @@ struct MovieListScreen: View {
     @State private var isShowingAddMovieScreen = false
     
     var body: some View {
-        List(movies) { movie in
-            Text("\(movie.title), \(movie.year)")
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Add Movie") {
-                    isShowingAddMovieScreen = true
+        MovieListView(movies: movies)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Movie") {
+                        isShowingAddMovieScreen = true
+                    }
                 }
             }
-        }
-        .sheet(isPresented: $isShowingAddMovieScreen) {
-            NavigationStack {
-                AddMovieScreen()
+            .sheet(isPresented: $isShowingAddMovieScreen) {
+                NavigationStack {
+                    AddMovieScreen()
+                }
             }
-        }
     }
 }
 
