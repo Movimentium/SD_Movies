@@ -12,12 +12,17 @@ struct MovieListView: View {
     var body: some View {
         List {
             ForEach(movies) { movie in
-                HStack(alignment: .center, spacing: 20){
-                    Text(movie.title)
-                    Text(movie.year.description)
+                NavigationLink(value: movie) {
+                    HStack(alignment: .center, spacing: 20){
+                        Text(movie.title)
+                        Text(movie.year.description)
+                    }
                 }
             }
             .onDelete(perform: deleteMovie)
+        }
+        .navigationDestination(for: Movie.self) { movie in
+            MovieDetailScreen(movie: movie)
         }
     }
     

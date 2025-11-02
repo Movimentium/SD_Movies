@@ -14,3 +14,7 @@ final class Movie {
         self.year = year
     }
 }
+
+// This do the Preview do not crash
+//extension Movie: PersistentModel, Observable {}
+

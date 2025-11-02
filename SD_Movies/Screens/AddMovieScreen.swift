@@ -46,9 +46,9 @@ struct AddMovieScreen: View {
             return
         }
         let movie = Movie(title: title, year: year)
+        modelCtx.insert(movie)
         do {
             try modelCtx.save()
-            modelCtx.insert(movie)
             print(Self.self, #function, "OK")
             dump(movie)
         } catch {
