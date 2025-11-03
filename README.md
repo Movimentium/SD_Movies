@@ -2,4 +2,6 @@
 
 ## Description
 
-Swift Data iOS app. 
+Version 1.0
+
+Only the entity Movie 
