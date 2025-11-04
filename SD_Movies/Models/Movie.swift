@@ -9,12 +9,12 @@ final class Movie {
     var title: String
     var year: Int
     
+    @Relationship(deleteRule: .deny, inverse: \Review.movie)
+    var reviews: [Review]? = []
+    
     init(title: String, year: Int) {
         self.title = title
         self.year = year
     }
 }
-
-// This do the Preview do not crash
-//extension Movie: PersistentModel, Observable {}
 

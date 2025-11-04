@@ -56,7 +56,7 @@ struct MovieDetailScreen: View {
     }
 }
 
-
+// WTF is this innecessary shit???
 struct MovieDetailContainerScreen: View {
     
     @Environment(\.modelContext) private var modelCtx
