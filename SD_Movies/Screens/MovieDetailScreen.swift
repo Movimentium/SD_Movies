@@ -10,32 +10,48 @@ struct MovieDetailScreen: View {
     @Environment(\.modelContext) private var modelCtx
     @State private var title: String = ""
     @State private var year: Int?
+    @State private var showReviewScreen = false
     
     var body: some View {
         VStack(spacing: 0) {
             Form {
                 TextField("Title", text: $title)
                 TextField("Year", value: $year, format: .number)
-            }
-            .onAppear {
-                title = movie.title
-                year = movie.year
-            }
-            
-            Form {
                 Button("Update") {
                     update(movie: movie)
                 }
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
+                
+                Section("Reviews") {
+                    Button {
+                        showReviewScreen = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    if let reviews = movie.reviews {
+                        if reviews.isEmpty {
+                            ContentUnavailableView {
+                                Text("No reviews")
+                            }
+                        } else {
+                            // TODO:
+                            Text("List of reviews")
+                        }
+                    }
+                }
             }
-            
-            ForEach(0 ..< 4) { _ in
-                Color(.systemGray6)
-                    .ignoresSafeArea()
+            .onAppear {
+                title = movie.title
+                year = movie.year
             }
         }
         .navigationTitle("Update Movie")
+        .sheet(isPresented: $showReviewScreen) {
+            NavigationStack {
+                AddReviewScreen(movie: movie)
+            }
+        }
     }
     
     // MARK: - Logic
@@ -56,27 +72,10 @@ struct MovieDetailScreen: View {
     }
 }
 
-// WTF is this innecessary shit???
-struct MovieDetailContainerScreen: View {
-    
-    @Environment(\.modelContext) private var modelCtx
-    @State private var movie: Movie?
-    
-    var body: some View {
-        ZStack {
-            if let movie {
-                MovieDetailScreen(movie: movie)
-            }
-        }
-        .onAppear {
-            movie = Movie(title: "Spiderman", year: 2023)
-            modelCtx.insert(movie!)
-        }
-    }
-}
-
 
 #Preview {
-    MovieDetailContainerScreen()
-        .modelContainer(for: Movie.self)
+    NavigationStack {
+        MovieDetailScreen(movie: Movie.movies.first!)
+            .modelContainer(for: Movie.self)
+    }
 }

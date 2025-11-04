@@ -42,5 +42,5 @@ struct MovieListView: View {
 }
 
 #Preview {
-    MovieListView(movies: [])
+    MovieListView(movies: Movie.movies)
 }
