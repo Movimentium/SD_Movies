@@ -5,10 +5,15 @@ import SwiftUI
 import SwiftData
 
 struct MovieListScreen: View {
-    
     //@Query private var movies: [Movie] // without any order or predicate
     @Query(sort: \Movie.title, order: .forward) private var movies: [Movie]
     @State private var isShowingAddMovieScreen = false
+    
+    // TODO: review this
+    #if DEBUG
+    @Environment(\.modelContext) private var modelCtx
+    @State private var isDBwithSampleMovies = false
+    #endif
     
     var body: some View {
         MovieListView(movies: movies)
@@ -24,6 +29,17 @@ struct MovieListScreen: View {
                     AddMovieScreen()
                 }
             }
+#if DEBUG
+            .onAppear() {
+                if !isDBwithSampleMovies {
+                    Movie.movies.first!.reviews = Review.reviews
+                    Movie.movies.forEach { modelCtx.insert($0) }
+                    try! modelCtx.save()
+                    isDBwithSampleMovies = true
+                }
+            }
+#endif
+
     }
 }
 

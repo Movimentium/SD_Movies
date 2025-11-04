@@ -39,7 +39,7 @@ struct AddReviewScreen: View {
         modelCtx.insert(review)
         do {                               // IDLI: repeated code
             try modelCtx.save()
-            movie.reviews?.append(review)  // is this necessary??
+            movie.reviews.append(review)  // is this necessary??
         } catch {
             print(error.localizedDescription)
         }

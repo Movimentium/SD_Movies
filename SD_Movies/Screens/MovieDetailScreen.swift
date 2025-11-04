@@ -30,15 +30,12 @@ struct MovieDetailScreen: View {
                         Image(systemName: "plus")
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                    if let reviews = movie.reviews {
-                        if reviews.isEmpty {
-                            ContentUnavailableView {
-                                Text("No reviews")
-                            }
-                        } else {
-                            // TODO:
-                            Text("List of reviews")
+                    if movie.reviews.isEmpty {
+                        ContentUnavailableView {
+                            Text("No reviews")
                         }
+                    } else {
+                        ReviewListView(movie: movie)
                     }
                 }
             }
@@ -75,6 +72,9 @@ struct MovieDetailScreen: View {
 
 
 #Preview {
+    // Comment or Discomment if you want to see reviews
+    let _ = { Movie.movies.first!.reviews = Review.reviews }()
+    
     NavigationStack {
         MovieDetailScreen(movie: Movie.movies.first!)
             .modelContainer(for: Movie.self)

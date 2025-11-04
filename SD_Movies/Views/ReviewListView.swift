@@ -4,13 +4,13 @@
 import SwiftUI
 
 struct ReviewListView: View {
-    let reviews: [Review]
+    let movie: Movie
     
     @Environment(\.modelContext) private var modelCtx
     
     var body: some View {
         List {
-            ForEach(reviews) { review in
+            ForEach(movie.reviews) { review in
                 VStack(alignment: .leading, spacing: 2) {
                     Text(review.subject).bold()
                     Text(review.body).font(.subheadline)
@@ -23,8 +23,9 @@ struct ReviewListView: View {
     // MARK: - Logic
     private func deleteReview(indexSet: IndexSet) {
         indexSet.forEach { idx in
-            let reviewToDelete = reviews[idx]
-            modelCtx.delete(reviewToDelete)
+            let reviewToDelete = movie.reviews[idx]
+            modelCtx.delete(reviewToDelete) // From the DB
+            movie.reviews.remove(at: idx)   // From the Movie object
             do {
                 try modelCtx.save()
             } catch {
@@ -35,5 +36,8 @@ struct ReviewListView: View {
 }
 
 #Preview {
-    ReviewListView(reviews: Review.reviews)
+    // Comment or Discomment if you want to see reviews
+    let _ = { Movie.movies.first!.reviews = Review.reviews }()
+
+    ReviewListView(movie: Movie.movies.first!)
 }
