@@ -8,7 +8,6 @@ struct AddMovieScreen: View {
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelCtx
-    
     @State private var title: String = ""
     @State private var year: Int?
     

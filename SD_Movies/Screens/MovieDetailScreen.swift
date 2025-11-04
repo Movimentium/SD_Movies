@@ -6,8 +6,8 @@ import SwiftData
 
 struct MovieDetailScreen: View {
     
-    @Environment(\.modelContext) private var modelCtx
     let movie: Movie
+    @Environment(\.modelContext) private var modelCtx
     @State private var title: String = ""
     @State private var year: Int?
     

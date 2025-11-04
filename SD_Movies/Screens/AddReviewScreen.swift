@@ -4,8 +4,8 @@
 import SwiftUI
 
 struct AddReviewScreen: View {
+    
     let movie: Movie
-
     @Environment(\.modelContext) private var modelCtx
     @Environment(\.dismiss) private var dismiss
     @State private var subject: String = ""
