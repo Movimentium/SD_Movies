@@ -28,6 +28,7 @@ struct MovieDetailScreen: View {
                         showReviewScreen = true
                     } label: {
                         Image(systemName: "plus")
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     if let reviews = movie.reviews {
                         if reviews.isEmpty {

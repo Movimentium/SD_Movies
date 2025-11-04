@@ -15,6 +15,7 @@
 		0C52F73C2EB97459007D4846 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F73B2EB97459007D4846 /* Notes.swift */; };
 		0C52F73E2EB97A3C007D4846 /* AddReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F73D2EB97A3C007D4846 /* AddReviewScreen.swift */; };
 		0C52F7402EB97AB7007D4846 /* ExtensionsForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F73F2EB97AB7007D4846 /* ExtensionsForPreview.swift */; };
+		0C69F68B2EBAAF2E001EF8CC /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C69F68A2EBAAF2E001EF8CC /* ReviewListView.swift */; };
 		0C981C812EB6C13200F76731 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C981C802EB6C13200F76731 /* Movie.swift */; };
 		0C981C832EB6C1A900F76731 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C981C822EB6C1A900F76731 /* README.md */; };
 		0C981C852EB6CDF700F76731 /* AddMovieScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */; };
@@ -33,6 +34,7 @@
 		0C52F73B2EB97459007D4846 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		0C52F73D2EB97A3C007D4846 /* AddReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewScreen.swift; sourceTree = "<group>"; };
 		0C52F73F2EB97AB7007D4846 /* ExtensionsForPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsForPreview.swift; sourceTree = "<group>"; };
+		0C69F68A2EBAAF2E001EF8CC /* ReviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListView.swift; sourceTree = "<group>"; };
 		0C981C802EB6C13200F76731 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		0C981C822EB6C1A900F76731 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieScreen.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				0C01A4722EB6BE16005D7AA4 /* MovieListView.swift */,
+				0C69F68A2EBAAF2E001EF8CC /* ReviewListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				0C52F73A2EB973B7007D4846 /* Review.swift in Sources */,
 				0C01A4732EB6BE16005D7AA4 /* MovieListView.swift in Sources */,
 				0C52F7402EB97AB7007D4846 /* ExtensionsForPreview.swift in Sources */,
+				0C69F68B2EBAAF2E001EF8CC /* ReviewListView.swift in Sources */,
 				0C981C8E2EB6F31100F76731 /* MovieDetailScreen.swift in Sources */,
 				0C981C8B2EB6D8CA00F76731 /* MovieListScreen.swift in Sources */,
 				0C52F73C2EB97459007D4846 /* Notes.swift in Sources */,
