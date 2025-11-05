@@ -77,6 +77,6 @@ struct MovieDetailScreen: View {
     
     NavigationStack {
         MovieDetailScreen(movie: Movie.movies.first!)
-            .modelContainer(for: Movie.self)
+            .modelContainer(for: [Movie.self, Review.self, Actor.self])
     }
 }

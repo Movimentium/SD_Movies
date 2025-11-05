@@ -9,9 +9,8 @@ struct SD_MoviesApp: App {
         WindowGroup {
             NavigationStack {
                 MovieListScreen()
-                    .navigationTitle("Movies")
             }
         }
-        .modelContainer(for: [Movie.self])
+        .modelContainer(for: [Movie.self, Review.self, Actor.self])
     }
 }
