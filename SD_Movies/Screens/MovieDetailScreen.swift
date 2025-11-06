@@ -72,10 +72,10 @@ struct MovieDetailScreen: View {
 
 
 #Preview {
-    // Comment or Discomment if you want to see reviews
-    let _ = { Movie.movies.first!.reviews = Review.reviews }()
-    
+
     NavigationStack {
+        // Comment or Discomment if you want to see reviews
+        let _ = { Movie.movies.first!.reviews = Review.reviews }()
         MovieDetailScreen(movie: Movie.movies.first!)
             .modelContainer(for: [Movie.self, Review.self, Actor.self])
     }

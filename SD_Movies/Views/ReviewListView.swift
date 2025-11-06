@@ -36,8 +36,10 @@ struct ReviewListView: View {
 }
 
 #Preview {
-    // Comment or Discomment if you want to see reviews
-    let _ = { Movie.movies.first!.reviews = Review.reviews }()
-
-    ReviewListView(movie: Movie.movies.first!)
+    NavigationStack {
+        // Comment or Discomment if you want to see reviews
+        let _ = { Movie.movies.first!.reviews = Review.reviews }()
+        
+        ReviewListView(movie: Movie.movies.first!)
+    }
 }
