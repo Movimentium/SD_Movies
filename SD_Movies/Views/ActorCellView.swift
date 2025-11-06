@@ -10,7 +10,7 @@ struct ActorCellView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(actor.name).bold()
-            Text(actor.movies.map { $0.title }, format: .list(type: .and))
+            Text(actor.movies.map { $0.title }, format: .list(type: .and))  // IDLT "and" is a bad idea for movie titles
                 .font(.caption)
         }
     }
@@ -20,5 +20,6 @@ struct ActorCellView: View {
     NavigationStack {
         let _ = Movie.setSampleMovies()
         ActorCellView(actor: Actor.actors[0])
+            .border(.red)
     }
 }

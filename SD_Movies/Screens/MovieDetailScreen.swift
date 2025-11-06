@@ -38,6 +38,18 @@ struct MovieDetailScreen: View {
                         ReviewListView(movie: movie)
                     }
                 }
+                
+                Section("Actors") {
+                    if movie.actors.isEmpty {
+                        ContentUnavailableView {
+                            Text("No actors")
+                        }
+                    } else {
+                        List(movie.actors) { actor in
+                            ActorCellView(actor: actor)
+                        }
+                    }
+                }
             }
             .onAppear {
                 title = movie.title
@@ -74,9 +86,10 @@ struct MovieDetailScreen: View {
 #Preview {
 
     NavigationStack {
-        // Comment or Discomment if you want to see reviews
-        let _ = { Movie.movies.first!.reviews = Review.reviews }()
-        MovieDetailScreen(movie: Movie.movies.first!)
+        // Comment or Discomment     
+        let _ = Movie.setSampleMovies()
+        
+        MovieDetailScreen(movie: Movie.movies.last!)
             .modelContainer(for: [Movie.self, Review.self, Actor.self])
     }
 }
