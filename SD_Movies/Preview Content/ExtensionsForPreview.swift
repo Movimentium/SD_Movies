@@ -6,9 +6,21 @@ import SwiftData
 
 extension Movie {
     static let movies = [
-        Movie(title: "Memento", year: 2000),
-        Movie(title: "Batman", year: 1989)
+        Movie(title: "Batman", year: 1989),
+        Movie(title: "Memento", year: 2000)
     ]
+    
+    @MainActor
+    static func setSampleMovies() {
+        let modelCtx = Actor.previewContainer.mainContext
+        Movie.movies.last!.reviews = Review.reviews
+        Movie.movies.last!.actors = [Actor.actors[0], Actor.actors.last!]
+        Movie.movies.forEach {
+            modelCtx.insert($0)
+        }
+        modelCtx.insert(Actor.actors[1])
+        modelCtx.insert(Actor.actors[2])
+    }
 }
 
 extension Review {

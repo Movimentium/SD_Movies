@@ -1,0 +1,24 @@
+//  ActorCellView.swift
+//  SD_Movies
+//  Created by Miguel Gallego on 6/11/25.
+import SwiftUI
+
+struct ActorCellView: View {
+    
+    let actor: Actor
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(actor.name).bold()
+            Text(actor.movies.map { $0.title }, format: .list(type: .and))
+                .font(.caption)
+        }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        let _ = Movie.setSampleMovies()
+        ActorCellView(actor: Actor.actors[0])
+    }
+}

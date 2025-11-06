@@ -63,14 +63,7 @@ struct MovieListScreen: View {
 #if DEBUG
         .onAppear() {
             if !isDBwithSampleMovies {
-                Movie.movies.last!.reviews = Review.reviews
-                Movie.movies.last!.actors = [Actor.actors[0], Actor.actors.last!]
-                Movie.movies.forEach {
-                    modelCtx.insert($0)
-                }
-                modelCtx.insert(Actor.actors[1])
-                modelCtx.insert(Actor.actors[2])
-                try! modelCtx.save()
+                Movie.setSampleMovies()
                 isDBwithSampleMovies = true
             }
         }
