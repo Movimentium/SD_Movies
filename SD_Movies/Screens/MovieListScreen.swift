@@ -5,6 +5,7 @@ import SwiftUI
 import SwiftData
 
 struct MovieListScreen: View {
+    
     @Environment(\.modelContext) private var modelCtx
     @Query(sort: \Movie.title, order: .forward) private var movies: [Movie]
     @Query(sort: \Actor.name, order: .forward) private var actors: [Actor]
@@ -62,8 +63,13 @@ struct MovieListScreen: View {
 #if DEBUG
         .onAppear() {
             if !isDBwithSampleMovies {
-                Movie.movies.first!.reviews = Review.reviews
-                Movie.movies.forEach { modelCtx.insert($0) }
+                Movie.movies.last!.reviews = Review.reviews
+                Movie.movies.last!.actors = [Actor.actors[0], Actor.actors.last!]
+                Movie.movies.forEach {
+                    modelCtx.insert($0)
+                }
+                modelCtx.insert(Actor.actors[1])
+                modelCtx.insert(Actor.actors[2])
                 try! modelCtx.save()
                 isDBwithSampleMovies = true
             }

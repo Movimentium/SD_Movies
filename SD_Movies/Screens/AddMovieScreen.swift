@@ -10,25 +10,26 @@ struct AddMovieScreen: View {
     @Environment(\.modelContext) private var modelCtx
     @State private var title: String = ""
     @State private var year: Int?
+    @State private var selectedActors: Set<Actor> = []
     
     var body: some View {
         Form {
             TextField("Title", text: $title)
             TextField("Year", value: $year, format: .number)
+            
+            Section("Select Actors") {
+                ActorSelectionView(selectedActors: $selectedActors)
+            }
         }
         .navigationTitle("Add Movie")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
+                Button { dismiss() } label: {
                     Image(systemName: "xmark")
                 }
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Save") {
-                    saveMovie()
-                }
+                Button("Save") { saveMovie() }
                 .disabled(!isFormValid)
             }
         }
@@ -40,19 +41,16 @@ struct AddMovieScreen: View {
     }
     
     private func saveMovie() {
-        guard let year else {
-            // TODO: show msg "Year field can not be empty"
-            return
-        }
+        guard let year else { return }
+        
         let movie = Movie(title: title, year: year)
         modelCtx.insert(movie)
-        do {
-            try modelCtx.save()
-            print(Self.self, #function, "OK")
-            dump(movie)
-        } catch {
-            print(error.localizedDescription);  print(error)
+        
+        selectedActors.forEach { actor in
+            actor.movies.append(movie)
+            modelCtx.insert(actor)
         }
+        
         dismiss()
     }
     

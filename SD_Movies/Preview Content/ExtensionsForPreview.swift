@@ -6,8 +6,8 @@ import SwiftData
 
 extension Movie {
     static let movies = [
-        Movie(title: "Batman", year: 1989),
-        Movie(title: "Memento", year: 2000)
+        Movie(title: "Memento", year: 2000),
+        Movie(title: "Batman", year: 1989)
     ]
 }
 
