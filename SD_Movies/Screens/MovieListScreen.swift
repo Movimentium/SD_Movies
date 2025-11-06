@@ -12,12 +12,7 @@ struct MovieListScreen: View {
     @State private var isShowingAddMovieScreen = false
     @State private var isShowingAddActorScreen = false
     @State private var actorName = ""
-    
-    // TODO: review this: pe: 2 taps to add movies...
-#if DEBUG
-    @State private var isDBwithSampleMovies = false
-#endif
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Movies")
@@ -61,11 +56,8 @@ struct MovieListScreen: View {
             .buttonStyle(.borderedProminent)
         }
 #if DEBUG
-        .onAppear() {
-            if !isDBwithSampleMovies {
-                Movie.setSampleMovies()
-                isDBwithSampleMovies = true
-            }
+        .onTapGesture(count: 3) {
+            Movie.insertSampleData(modelCtx)
         }
 #endif
         

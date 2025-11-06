@@ -18,7 +18,7 @@ struct ActorCellView: View {
 
 #Preview {
     NavigationStack {
-        let _ = Movie.setSampleMovies()
+        let _ = Movie.insertSampleData()
         ActorCellView(actor: Actor.actors[0])
             .border(.red)
     }

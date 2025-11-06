@@ -9,10 +9,15 @@ extension Movie {
         Movie(title: "Batman", year: 1989),
         Movie(title: "Memento", year: 2000)
     ]
-    
+    //TODO: REVIEW improve this
     @MainActor
-    static func setSampleMovies() {
-        let modelCtx = Actor.previewContainer.mainContext
+    static func insertSampleData(_ modelContext: ModelContext? = nil) {
+        var modelCtx: ModelContext
+        if let mCtx = modelContext {
+            modelCtx = mCtx
+        } else {
+            modelCtx = Actor.previewContainer.mainContext
+        }
         Movie.movies.last!.reviews = Review.reviews
         Movie.movies.last!.actors = [Actor.actors[0], Actor.actors.last!]
         Movie.movies.forEach {

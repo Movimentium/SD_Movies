@@ -33,6 +33,9 @@ struct AddMovieScreen: View {
                 .disabled(!isFormValid)
             }
         }
+        .onChange(of: selectedActors) {
+            print("selectedActors: \(selectedActors.count)")
+        }
     }
     
     // MARK: - Logic

@@ -87,7 +87,7 @@ struct MovieDetailScreen: View {
 
     NavigationStack {
         // Comment or Discomment     
-        let _ = Movie.setSampleMovies()
+        let _ = Movie.insertSampleData()
         
         MovieDetailScreen(movie: Movie.movies.last!)
             .modelContainer(for: [Movie.self, Review.self, Actor.self])
