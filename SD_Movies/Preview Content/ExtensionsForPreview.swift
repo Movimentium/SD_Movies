@@ -16,3 +16,10 @@ extension Review {
         Review(subject: "Not Bad", body: "Not bad, but could be better.")
     ]
 }
+
+extension Actor {
+    static let actors = [
+        Actor(name: "Carrie-Anne Moss"), Actor(name: "Michael Keaton"),
+        Actor(name: "Jack Nicholson"), Actor(name: "Guy Pearce")
+    ]
+}
