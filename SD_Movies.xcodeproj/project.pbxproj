@@ -12,6 +12,8 @@
 		0C01A4752EB6BE19005D7AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C01A4742EB6BE19005D7AA4 /* Assets.xcassets */; };
 		0C2C81DC2EBD01FC00D3D8A6 /* ActorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2C81DB2EBD01FC00D3D8A6 /* ActorCellView.swift */; };
 		0C47949A2EBCDED100A3AA7A /* ActorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4794992EBCDED100A3AA7A /* ActorSelectionView.swift */; };
+		0C4F7F742EBD71E200E89297 /* ActorDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F7F732EBD71E200E89297 /* ActorDetailScreen.swift */; };
+		0C4F7F762EBD73B800E89297 /* MovieSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4F7F752EBD73B800E89297 /* MovieSelectionView.swift */; };
 		0C52F73A2EB973B7007D4846 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F7392EB973B7007D4846 /* Review.swift */; };
 		0C52F73C2EB97459007D4846 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F73B2EB97459007D4846 /* Notes.swift */; };
 		0C52F73E2EB97A3C007D4846 /* AddReviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52F73D2EB97A3C007D4846 /* AddReviewScreen.swift */; };
@@ -35,6 +37,8 @@
 		0C01A4772EB6BE19005D7AA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C2C81DB2EBD01FC00D3D8A6 /* ActorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCellView.swift; sourceTree = "<group>"; };
 		0C4794992EBCDED100A3AA7A /* ActorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorSelectionView.swift; sourceTree = "<group>"; };
+		0C4F7F732EBD71E200E89297 /* ActorDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorDetailScreen.swift; sourceTree = "<group>"; };
+		0C4F7F752EBD73B800E89297 /* MovieSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSelectionView.swift; sourceTree = "<group>"; };
 		0C52F7392EB973B7007D4846 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		0C52F73B2EB97459007D4846 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		0C52F73D2EB97A3C007D4846 /* AddReviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewScreen.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				0C981C8D2EB6F31100F76731 /* MovieDetailScreen.swift */,
 				0C981C842EB6CDF700F76731 /* AddMovieScreen.swift */,
 				0C52F73D2EB97A3C007D4846 /* AddReviewScreen.swift */,
+				0C4F7F732EBD71E200E89297 /* ActorDetailScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				0C01A4722EB6BE16005D7AA4 /* MovieListView.swift */,
+				0C4F7F752EBD73B800E89297 /* MovieSelectionView.swift */,
 				0C4794992EBCDED100A3AA7A /* ActorSelectionView.swift */,
 				0C97052E2EBAE90E0070CF89 /* ActorListView.swift */,
 				0C2C81DB2EBD01FC00D3D8A6 /* ActorCellView.swift */,
@@ -219,11 +225,13 @@
 				0C97052F2EBAE91B0070CF89 /* ActorListView.swift in Sources */,
 				0C01A4732EB6BE16005D7AA4 /* MovieListView.swift in Sources */,
 				0C69F68B2EBAAF2E001EF8CC /* ReviewListView.swift in Sources */,
+				0C4F7F742EBD71E200E89297 /* ActorDetailScreen.swift in Sources */,
 				0C97052D2EBAE2050070CF89 /* Actor.swift in Sources */,
 				0C981C8E2EB6F31100F76731 /* MovieDetailScreen.swift in Sources */,
 				0C981C8B2EB6D8CA00F76731 /* MovieListScreen.swift in Sources */,
 				0C69F68C2EBAB5BB001EF8CC /* ExtensionsForPreview.swift in Sources */,
 				0C52F73C2EB97459007D4846 /* Notes.swift in Sources */,
+				0C4F7F762EBD73B800E89297 /* MovieSelectionView.swift in Sources */,
 				0C01A4712EB6BE16005D7AA4 /* SD_MoviesApp.swift in Sources */,
 				0C47949A2EBCDED100A3AA7A /* ActorSelectionView.swift in Sources */,
 				0C981C812EB6C13200F76731 /* Movie.swift in Sources */,
