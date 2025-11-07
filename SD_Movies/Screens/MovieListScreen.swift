@@ -57,7 +57,7 @@ struct MovieListScreen: View {
         }
 #if DEBUG
         .onTapGesture(count: 3) {
-            Movie.insertSampleData(modelCtx)
+            PreVw.insertSampleData(modelCtx)
         }
 #endif
         

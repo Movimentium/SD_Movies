@@ -54,7 +54,7 @@ struct AddReviewScreen: View {
 
 #Preview {
     NavigationStack {
-        AddReviewScreen(movie: Movie.movies.first!)
+        AddReviewScreen(movie: PreVw.movies.first!)
             .modelContainer(for: [Movie.self, Review.self, Actor.self])
     }
 }

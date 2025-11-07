@@ -38,8 +38,8 @@ struct ReviewListView: View {
 #Preview {
     NavigationStack {
         // Comment or Discomment if you want to see reviews
-        let _ = { Movie.movies.first!.reviews = Review.reviews }()
+        let _ = { PreVw.movies.first!.reviews = PreVw.reviews }()
         
-        ReviewListView(movie: Movie.movies.first!)
+        ReviewListView(movie: PreVw.movies.first!)
     }
 }

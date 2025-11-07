@@ -32,7 +32,7 @@ struct MovieSelectionView: View {
 
 #Preview {
     NavigationStack {
-        MovieSelectionView(selectedMovies: .constant(Set(Movie.movies)))
-            .modelContainer(Actor.previewContainer)
+        MovieSelectionView(selectedMovies: .constant(Set(PreVw.movies)))
+            .modelContainer(PreVw.previewContainer)
     }
 }

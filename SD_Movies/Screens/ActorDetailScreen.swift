@@ -31,6 +31,6 @@ struct ActorDetailScreen: View {
 
 #Preview {
     NavigationStack {
-        ActorDetailScreen(actor: Actor.actors[0])
+        ActorDetailScreen(actor: PreVw.actors[0])
     }
 }
